@@ -36,4 +36,4 @@ const calculator = {
     }
     return (sum / (numbers.length));
   }
-}
+};
