@@ -1,14 +1,10 @@
-const intID = window.setInterval(function () {
+let timer = 0;
+
+window.setInterval(function (text) {
   const header = document.querySelector('h1');
-  if (header.textContent === '4') {
-    header.textContent = '3';
-  } else if (header.textContent === '3') {
-    header.textContent = '2';
-  } else if (header.textContent === '2') {
-    header.textContent = '1';
-  } else if (header.textContent === '1') {
-    header.textContent = '~Earth Beeeelooowww Us~';
-  } else if (header.textContent === '~Earth Beeeelooowww Us~') {
-    window.clearInterval(intID);
+  header.textContent = text[timer];
+  timer++;
+  if (timer === 4) {
+    window.clearInterval(1);
   }
-}, 2.0 * 1000);
+}, 1000, ['3', '2', '1', '~Earth Beeeelooowww Us~']);
