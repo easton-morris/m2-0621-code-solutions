@@ -1,0 +1,9 @@
+body {
+  margin: auto;
+}
+
+.carousel-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
