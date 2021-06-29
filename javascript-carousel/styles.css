@@ -22,8 +22,12 @@ body {
   transform: scale(1.25);
 }
 
+.img-area {
+  max-width: 50%;
+}
+
 .carousel-img {
-  width: 50%;
+  max-width: 90%;
 }
 
 .progress-area {
