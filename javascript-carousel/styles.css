@@ -15,7 +15,7 @@ body {
 }
 
 .hoverable {
-  transition: transform 0.2s;
+  transition: transform 0.25s;
 }
 
 .hoverable:hover {
