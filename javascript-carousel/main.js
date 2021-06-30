@@ -32,20 +32,6 @@ const imageSet = [
   }
 ];
 
-intervalNum = window.setInterval(function () {
-  let currentPos = $caroImg.getAttribute('data-num');
-  currentPos = parseInt(currentPos);
-  if (currentPos === (imageSet.length - 1)) {
-    $iconList[0].setAttribute('class', 'progress-icon hoverable fas fa-gem');
-    $caroImg.setAttribute('src', imageSet[0].path);
-    $caroImg.setAttribute('alt', imageSet[0].altText);
-    $iconList[currentPos].setAttribute('class', 'progress-icon hoverable far fa-gem');
-    $caroImg.setAttribute('data-num', 0);
-  } else {
-    advanceImg();
-  }
-}, 3 * 1000);
-
 function delayTimer() {
   intervalNum = window.setInterval(function () {
     let currentPos = $caroImg.getAttribute('data-num');
@@ -62,6 +48,8 @@ function delayTimer() {
   }, 3 * 1000);
 }
 
+delayTimer();
+
 function createIcons() {
   const firstIcon = document.createElement('i');
   firstIcon.setAttribute('class', 'progress-icon hoverable fas fa-gem');
@@ -76,8 +64,17 @@ function createIcons() {
   }
 }
 
-document.addEventListener('load', createIcons());
+createIcons();
 const $iconList = document.querySelectorAll('.fa-gem');
+
+function updateItems(position) {
+  $caroImg.setAttribute('src', imageSet[position].path);
+  $caroImg.setAttribute('alt', imageSet[position].altText);
+  $iconList[position].setAttribute('class', 'progress-icon hoverable fas fa-gem');
+
+  window.clearInterval(intervalNum);
+  delayTimer();
+}
 
 function advanceImg() {
   let currentPos = $caroImg.getAttribute('data-num');
@@ -86,15 +83,11 @@ function advanceImg() {
   $caroImg.setAttribute('data-num', currentPos);
   if (currentPos >= 0 && currentPos < imageSet.length) {
     $iconList[(currentPos - 1)].setAttribute('class', 'progress-icon hoverable far fa-gem');
-    $caroImg.setAttribute('src', imageSet[currentPos].path);
-    $caroImg.setAttribute('alt', imageSet[currentPos].altText);
-    $iconList[currentPos].setAttribute('class', 'progress-icon hoverable fas fa-gem');
+    updateItems(currentPos);
   } else {
     currentPos -= 1;
     $caroImg.setAttribute('data-num', currentPos);
   }
-  window.clearInterval(intervalNum);
-  delayTimer();
 }
 
 function backImg() {
@@ -104,27 +97,20 @@ function backImg() {
   $caroImg.setAttribute('data-num', currentPos);
   if (currentPos >= 0 && currentPos < imageSet.length) {
     $iconList[(currentPos + 1)].setAttribute('class', 'progress-icon hoverable far fa-gem');
-    $caroImg.setAttribute('src', imageSet[currentPos].path);
-    $caroImg.setAttribute('alt', imageSet[currentPos].altText);
-    $iconList[currentPos].setAttribute('class', 'progress-icon hoverable fas fa-gem');
+    updateItems(currentPos);
   } else {
     currentPos += 1;
     $caroImg.setAttribute('data-num', currentPos);
   }
-  window.clearInterval(intervalNum);
-  delayTimer();
 }
 
 function jumpImg(event) {
   const progPos = event.target.getAttribute('data-pos');
-  $caroImg.setAttribute('src', imageSet[progPos].path);
-  $caroImg.setAttribute('alt', imageSet[progPos].altText);
   const $resetIcon = document.querySelector('i[class="progress-icon hoverable fas fa-gem"]');
+  updateItems(progPos);
   $resetIcon.setAttribute('class', 'progress-icon hoverable far fa-gem');
   event.target.setAttribute('class', 'progress-icon hoverable fas fa-gem');
   $caroImg.setAttribute('data-num', progPos);
-  window.clearInterval(intervalNum);
-  delayTimer();
 }
 
 $progArea.addEventListener('click', jumpImg);
