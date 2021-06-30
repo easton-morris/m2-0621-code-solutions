@@ -1,0 +1,42 @@
+body {
+  margin: auto;
+}
+
+.carousel-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  font-size: xx-large;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.hoverable {
+  transition: transform 0.25s;
+}
+
+.hoverable:hover {
+  transform: scale(1.25);
+}
+
+.img-area {
+  max-width: 50%;
+}
+
+.carousel-img {
+  max-width: 90%;
+}
+
+.progress-area {
+  display: flex;
+  justify-content: center;
+}
+
+.progress-icon {
+  font-size: larger;
+  padding: 0.25rem;
+  cursor: pointer;
+}
