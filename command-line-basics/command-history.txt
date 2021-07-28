@@ -1,0 +1,527 @@
+    1  ls
+    2  cd repos
+    3  ls
+    4  cd m2-0621-code-solutions/
+    5  git status
+    6  git add javascript-custom-methods/
+    7  git status
+    8  git add javascript-custom-methods/
+    9  git status
+   10  git commit -m "javascript=custom-methods"
+   11  git push origin javascript-custom-methods 
+   12  git status
+   13  git checkout master
+   14  git status
+   15  git pull origin
+   16  npm ci install
+   17  git status
+   18  git pull origin
+   19  git status
+   20  git add javascript-custom-methods/calculator.js 
+   21  git commit -m "semicolon"
+   22  git push origin
+   23  git status
+   24  git checkout -b javascript-this
+   25  git status
+   26  git add javascript-this/
+   27  git commit -m "javascript-this"
+   28  git push origin javascript-this 
+   29  git checkout master
+   30  git pull origin
+   31  clear
+   32  git checkout -b javascript-prototypes
+   33  git status
+   34  git add javascript-prototypes/
+   35  git commit -m "javascript-prototypes"
+   36  git push origin javascript-prototypes 
+   37  git checkout master
+   38  git pull origin
+   39  clear
+   40  cd
+   41  cd repos/m2-0621-code-solutions/
+   42  git pull origin
+   43  git checkout -b javascript-constructors
+   44  git status
+   45  git add javascript-constructors/
+   46  git commit -m "javascript-constructors"
+   47  git push origin javascript-constructors 
+   48  git status
+   49  git add javascript-constructors/student.js 
+   50  git commit -m "redefined on the constructor prototype"
+   51  git push origin
+   52  git push origin javascript-constructors 
+   53  git status
+   54  clear
+   55  git checkout master
+   56  git pull origin
+   57  git stutus
+   58  git status
+   59  clea
+   60  clear
+   61  cd repos
+   62  cd m2-0621-code-solutions/
+   63  git checkout -b javascript-bank
+   64  git status
+   65  git add javascript-bank/
+   66  git commit -m "javascript-bank"
+   67  git push origin javascript-bank 
+   68  git status
+   69  git checkout master
+   70  cd repos/m2-0621-code-solutions/
+   71  git checkout javascript-bank 
+   72  git status
+   73  git add javascript-bank/account.js javascript-bank/bank.js 
+   74  git status
+   75  git add javascript-bank/bank.js 
+   76  git commit -m "fixed redundancies and changed proto method assignments"
+   77  git push origin javascript-bank 
+   78  git status
+   79  git checkout master
+   80  git pull origin
+   81  git status
+   82  git checkout -b javascript-timers
+   83  clear
+   84  git status
+   85  git add javascript-timers/
+   86  git commit -m "javascript-timers"
+   87  git push origin javascript-timers 
+   88  git statuts
+   89  git status
+   90  git add javascript-timers/interval.js 
+   91  git commit -m "fixed interval and made a more elegant solution"
+   92  git push origin javascript-timers 
+   93  git status
+   94  git add javascript-timers/interval.js 
+   95  git commit -m "cleared a dead variable"
+   96  git push origin javascript-timers 
+   97  git checkout master
+   98  git pull origin
+   99  clear
+  100  git checkout -b javascript-carousel
+  101  cd repos/m2-0621-code-solutions/
+  102  git status
+  103  git add javascript-carousel/
+  104  git commit -m "added items, added html frame, commented out the JS plan"
+  105  git push origin javascript-carousel 
+  106  cd repos/m2-0621-code-solutions/
+  107  git status
+  108  git add javascript-carousel/index.html javascript-carousel/main.js  javascript-carousel/styles.css 
+  109  git commit -m "added the start of css"
+  110  git push origin
+  111  git push origin javascript-carousel 
+  112  git status
+  113  cd repos/m2-0621-code-solutions/
+  114  git status
+  115  git add javascript-carousel/index.html javascript-carousel/styles.css 
+  116  git commit -m "finished css and adjusted html"
+  117  git push origin javascript-carousel 
+  118  clear
+  119  git status
+  120  git add javascript-carousel/index.html javascript-carousel/main.js javascript-carousel/styles.css 
+  121  git commit -m "fixed styling, started functions, and worked on the html tree needed for scripts"
+  122  git push origin javascript-carousel 
+  123  git status
+  124  git add javascript-carousel/index.html javascript-carousel/main.js javascript-carousel/styles.css 
+  125  git commit -m "almost done, need to make the scripts update the icons and position numbers"
+  126  git push origin javascript-carousel 
+  127  clear
+  128  git status
+  129  git add javascript-carousel/main.js 
+  130  git commit -m "navigation, timer, delay, and jumping works"
+  131  git push origin javascript-carousel 
+  132  clear
+  133  git status
+  134  cd
+  135  cd repos
+  136  git clone git@github.com:easton-morris/driving-game.git
+  137  cd driving-game/
+  138  cd
+  139  cd repos/m2
+  140  cd repos/m2-0621-code-solutions/
+  141  git status
+  142  git add javascript-carousel/main.js 
+  143  git commit -m "made the suggested changes to the JS"
+  144  git push origin javascript-carousel 
+  145  clear
+  146  git status
+  147  git checkout master
+  148  git pull origin
+  149  clear
+  150  git status
+  151  vf
+  152  cd 
+  153  cd repos/driving-game/
+  154  npm ci
+  155  git pull origin
+  156  clear
+  157  git checkout -b issue-1-see-car
+  158  cd repos/driving-game/
+  159  git status
+  160  git add index.html styles.css 
+  161  git commit -m "added html skeleton with main and img, added basic styling to start the car on the page"
+  162  git push origin issue-1-see-car
+  163  clear
+  164  cd repos/m2-0621-code-solutions/
+  165  cd
+  166  cd repos/dr
+  167  cd repos/driving-game/
+  168  git status
+  169  git add index.html 
+  170  git commit -m "added the correct title"
+  171  git push origin issue-1-see-car 
+  172  git checkout master
+  173  git pull origin
+  174  cd repos/driving-game/
+  175  git checkout -b issue-2-turn-car
+  176  git status
+  177  git add main.js index.html styles.css 
+  178  git commit -m "added the function, listeners, transforms, and custom attr"
+  179  git push origin issue-2-turn-car 
+  180  clear
+  181  git checkout master
+  182  git pull origin
+  183  git staus
+  184  git status
+  185  clear
+  186  git pull origin
+  187  git status
+  188  git pull origin
+  189  git restore index.html main.js styles.css
+  190  git checkout -b issue-3-start-car
+  191  git status
+  192  git add index.html main.js styles.css 
+  193  git commit -m "added the coordinates, script for moving car, and listener for trigger"
+  194  git push origin issue-3-start-car 
+  195  clear
+  196  cd repos/driving-game/
+  197  git checkout master
+  198  git pull origin
+  199  clear
+  200  cd repos/driving-game/
+  201  git pull origin
+  202  git checkout issue-4-stop-car 
+  203  git checkout master
+  204  git pull origin
+  205  git checkout -b issue-5-steer-car
+  206  git status
+  207  git add main.js 
+  208  git commit -m "added additional consideration for the other directions, added adjustments in other directions"
+  209  git push origin issue-5-steer-car 
+  210  cd
+  211  cd repos/driving-game/
+  212  git checkout master
+  213  git pull origin
+  214  clear
+  215  cd 
+  216  cd repos/m2
+  217  cd repos/m2-0621-code-solutions/
+  218  git checkout -b http-messages
+  219  clear
+  220  http http://www.example.com
+  221  clear
+  222  http --verbose http://www.example.com
+  223  clear
+  224  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  225  http --body GET https://example.com > index.html
+  226  cd repos/m2-0621-code-solutions/
+  227  http --body GET https://example.com > index.html
+  228  git checkout master
+  229  git branch -d http-messages 
+  230  ls
+  231  cd http-messages/
+  232  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  233  http --body GET https://example.com > index.html
+  234  git checkout -b http-messages
+  235  git checkout master
+  236  git branch -d http-messages 
+  237  cd
+  238  cd repos/m2-0621-code-solutions/
+  239  git checkout -b http-messages
+  240  cd http-messages/
+  241  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+  242  http --body GET https://example.com > index.html
+  243  clear
+  244  git status
+  245  git add index.html 
+  246  ./
+  247  //
+  248  .
+  249  cd
+  250  cd repos/m2-0621-code-solutions/
+  251  git status
+  252  git add http-messages/
+  253  git add index.html 
+  254  git status
+  255  git add http-messages/
+  256  git commit -m "new files added"
+  257  git push origin http-messages 
+  258  clear
+  259  git checkout master
+  260  git checkout http-messages 
+  261  git status
+  262  git add index.html 
+  263  git commit -m "deleted duped index"
+  264  git push origin http-messages 
+  265  git checkout master
+  266  git pull origin
+  267  git checkout -b javascript-ajax
+  268  git status
+  269  git add javascript-ajax/
+  270  git commit -m "javascript-ajax"
+  271  git push origin javascript-ajax 
+  272  cd repos/m2-0621-code-solutions/
+  273  git status
+  274  git checkout master
+  275  git pull origin
+  276  clear
+  277  cd repos/basketball-app/
+  278  ls
+  279  branch
+  280  git b
+  281  git branch
+  282  git checkout -b issue-4-data-structure
+  283  git status
+  284  git add js/data.js 
+  285  git commit -m "created the basic data object"
+  286  git push origin issue-4-data-structure 
+  287  git status
+  288  clear
+  289  cd repos
+  290  ls
+  291  git clone git@github.com:easton-morris/ajax-project.git
+  292  cd ajax-project/
+  293  git checkout -b issue-1-load-rand-image
+  294  git checkout master
+  295  npm ci
+  296  git status
+  297  git branch -d issue-1-load-rand-image 
+  298  git checkout -b issue-1-load-random-image
+  299  git checkout master
+  300  git checkout issue-1-load-random-image 
+  301  git status
+  302  git add index.html images/AUIconT.png 
+  303  git commit -m "Added new Icon and changed the title of the page"
+  304  git push origin issue-1-load-random-image 
+  305  git status
+  306  git add index.html images/grayexp.jpg 
+  307  git commit -m "created the header items and image area HTML"
+  308  git push origin issue-1-load-random-image 
+  309  clear
+  310  git status
+  311  git add index.html css/
+  312  git commit -m "started styling the page with CSS"
+  313  git push origin issue-1-load-random-image 
+  314  git status
+  315  clear
+  316  cd repos/ajax-project/
+  317  git status
+  318  git add css/styles.css index.html js/main.js 
+  319  git commit -m "created canvas, added image and text, began basic styling"
+  320  git push origin issue-1-load-random-image 
+  321  git status
+  322  here
+  323  clear
+  324  cd repos/ajax-project/
+  325  git status
+  326  git add js/main.js 
+  327  git commit -m "added some notes and started the next function"
+  328  git push origin issue-1-load-random-image 
+  329  git status
+  330  cd repos/ajax-project/
+  331  git status
+  332  git add js/main.js 
+  333  git commit -m "almost finished the wrapping text, need to create context for the resized version"
+  334  git push origin issue-1-load-random-image 
+  335  git status
+  336  git add js/main.js 
+  337  git commit -m "tinkered with the script sizing a bit more, need to define the canvas size after CSS is applied somehow for text"
+  338  git push origin issue-1-load-random-image 
+  339  cd repos/a
+  340  cd repos/ajax-project/
+  341  git status
+  342  git add css/styles.css index.html js/main.js 
+  343  git commit -m "canvas now loads properly with text and image"
+  344  git push origin issue-1-load-random-image 
+  345  git status
+  346  git add js/main.js 
+  347  git commit -m "added alt text for accessibility"
+  348  git push origin issue-1-load-random-image 
+  349  clear
+  350  git checkout master
+  351  git pull origin
+  352  clear
+  353  git checkout -b issue-2-randomize
+  354  git status
+  355  git add css/layout.css css/styles.css index.html 
+  356  git commit -m "fixed some styling and added the button"
+  357  git push origin issue-2-randomize 
+  358  git status
+  359  clea
+  360  rclear
+  361  clear
+  362  cd repos/ajax-project/
+  363  git status
+  364  git add index.html js/main.js images/grayexp.jpg images/AUIconT.png 
+  365  git commit -m "created functions for randomizing that run when the image updates currently, using XHR"
+  366  git push origin issue-2-randomize 
+  367  git status
+  368  clear
+  369  git status
+  370  git add css/styles.css js/main.js 
+  371  git commit -m "fixed the centering on the button and created the function for randomizing the image and quote"
+  372  git push origin issue-2-randomize 
+  373  git status
+  374  git add css/styles.css 
+  375  git commit -m "fixed the styling on the randomize button"
+  376  git push origin issue-2-randomize 
+  377  git status
+  378  clear
+  379  git checkout master
+  380  git pull origin
+  381  git status
+  382  cd repos/ajax-project/
+  383  http https://animechan.vercel.app/api/available/characters
+  384  http https://animechan.vercel.app/api/available/anime
+  385  http https://animechan.vercel.app/api/available/character
+  386  http https://animechan.vercel.app/api/available/characters
+  387  https://animechan.vercel.app/api/quotes/character?name=alucard
+  388  http https://animechan.vercel.app/api/quotes/character?name=alucard
+  389  http https://animechan.vercel.app/api/quotes/character?name=alucar
+  390  http https://animechan.vercel.app/api/quotes/character?name=sai
+  391  git checkout -b issue-3-search-anime
+  392  git status
+  393  git add index.html 
+  394  git commit -m "created the select area"
+  395  git push origin issue-3-search-anime 
+  396  cd repos/ajax-project/
+  397  cd
+  398  cd repos/m2-0621-code-solutions/
+  399  git checkout -b es6-const-let
+  400  git status
+  401  git add es6-const-let/
+  402  git commit -m "es6-const-let"
+  403  git push origin es6-const-let 
+  404  git checkout master
+  405  git pull origin
+  406  clear
+  407  git checkout -b es6-template-literals
+  408  git status
+  409  git add es6-template-literals/
+  410  git commit -m "es6-template-literals"
+  411  git push origin es6-template-literals 
+  412  git checkout master
+  413  git checkout es6-template-literals 
+  414  git status
+  415  git add es6-template-literals/index.html 
+  416  git commit -m "removed space"
+  417  git push origin es6-template-literals 
+  418  git checkout master
+  419  git pull origin
+  420  clear
+  421  git checkout -b es6-destructuring
+  422  git status
+  423  git add es6-destructuring/
+  424  git commit -m "es6-destructuring"
+  425  git push origin es6-destructuring 
+  426  git checkout master
+  427  git pull origin
+  428  clear
+  429  git checkout -b es6-arrow-functions
+  430  git status
+  431  git add es6-arrow-functions/
+  432  git commit -m "es6-arrow-functions"
+  433  git push origin es6-arrow-functions 
+  434  git checkout master
+  435  git pull origin
+  436  clear
+  437  git checkout -b command-line-basics
+  438  cd command-line-basics
+  439  cd
+  440  cd command-line-basics
+  441  cd repos/m2-0621-code-solutions/
+  442  pwd
+  443  cd command-line-basics
+  444  pwd
+  445  man man
+  446  man cat
+  447  cd repos/m2-0621-code-solutions/
+  448  cd command-line-basics/
+  449  pwed
+  450  pwd
+  451  man cat
+  452  cat -a laziness.txt
+  453  cat --a laziness
+  454  man cat
+  455  cat laziness.txt
+  456  cat imapatience.txt
+  457  cat impatience.txt
+  458  cat hubris.txt
+  459  cat laziness.txt impatience.txt hubris.txt
+  460  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  461  cat tree-virtues.txt
+  462  cat three-virtues.txt
+  463  man ls
+  464  ls
+  465  ls -a
+  466  man ls
+  467  ls -f
+  468  ls -F
+  469  man ls
+  470  ls lfz-staff/
+  471  ls -a lfz-staff/
+  472  ls -F lfz-staff/
+  473  ls -aF lfz-staff/ > lfz-staff/contents.txt
+  474  cat lfz-staff/contents.txt 
+  475  clear
+  476  man pwd
+  477  pwd
+  478  pwd > i-was-here.txt
+  479  ;s
+  480  ls
+  481  cat i-was-here.txt 
+  482  man echo
+  483  echo Hello, World!
+  484  echo 'Hello, World!'
+  485  echo 'Hello, World!' > hello.txt
+  486  ls
+  487  cat hello.txt 
+  488  man touch
+  489  touch tag-youre-it.txt
+  490  ls
+  491  touch snoot/boop.txt
+  492  ls
+  493  ls snoot/
+  494  clear
+  495  man mkdir
+  496  mkdir -p parent
+  497  ls
+  498  ls -aF
+  499  mkdir -p parent/child/grandchild
+  500  ls
+  501  ls parent/
+  502  ls parent/child/
+  503  touch parent/child/grandchild/.getkeep
+  504  ls parent/child/grandchild/
+  505  ls -aF parent/child/grandchild/
+  506  ls -aF parent/child/grandchild/.gitkeep
+  507  touch parent/child/grandchild/.gitkeep
+  508  man mv
+  509  clear
+  510  mv pokiemans/ pokemon
+  511  ls
+  512  man rm
+  513  ls
+  514  rm lol.txt
+  515  ls
+  516  rm -r kill-me/
+  517  ls
+  518  rm parent/child/grandchild/.getkeep 
+  519  ls -a parent/child/grandchild/
+  520  man cp
+  521  cp and-then.txt no-and-then.txt
+  522  ls
+  523  cat and-then.txt no-and-then.txt 
+  524  man history 
+  525  clear
+  526  history
+  527  history > command-history.txt
