@@ -12,7 +12,7 @@ function app(op, arg1, arg2) {
     read();
   } else if (op === 'create') {
     create(arg1);
-  } else if (op === 'delete') {
+  } else if (op === 'deleteItem') {
     deleteItem(arg1);
   } else if (op === 'update') {
     update(arg1, arg2);
