@@ -4,19 +4,19 @@ const deleteItem = require('./delete');
 const update = require('./update');
 
 const op = process.argv[2];
-const id = process.argv[3];
-const string = process.argv[4];
+const arg1 = process.argv[3];
+const arg2 = process.argv[4];
 
-function app(op, id, string) {
+function app(op, arg1, arg2) {
   if (op === 'read') {
     read();
   } else if (op === 'create') {
-    create(string);
+    create(arg1);
   } else if (op === 'delete') {
-    deleteItem(id);
+    deleteItem(arg1);
   } else if (op === 'update') {
-    update(id, string);
+    update(arg1, arg2);
   }
 }
 
-app(op, id, string);
+app(op, arg1, arg2);
