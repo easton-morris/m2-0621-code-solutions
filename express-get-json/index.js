@@ -23,8 +23,6 @@ const grades = {
   }
 };
 
-app.listen(3000);
-
 app.get('/api/grades', (req, res) => {
   const resArr = [];
   for (const prop in grades) {
@@ -33,3 +31,5 @@ app.get('/api/grades', (req, res) => {
   }
   res.json(resArr);
 });
+
+app.listen(3000);
