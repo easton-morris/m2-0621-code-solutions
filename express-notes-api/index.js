@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 
 const notes = require('./data.json');
 
@@ -24,6 +25,26 @@ app.get('/api/notes/:id', (req, res) => {
   } else {
     res.status(400).json({ error: 'id must be a positive integer' });
   }
+});
+
+app.post('/api/notes', (req, res, next) => {
+  const assnID = notes.nextId;
+  if (req.body.content === undefined) {
+    res.status(400).json({ error: 'content is a required field' });
+  } else {
+    notes.notes[assnID] = {
+      id: assnID,
+      content: req.body.content
+    };
+    notes.nextId++;
+  }
+  fs.writeFile('./data.json', JSON.stringify(notes), err => {
+    if (err) {
+      res.status(500).json({ error: 'An unexpected error has occurred' });
+    } else {
+      res.status(201).json(notes.notes[assnID]);
+    }
+  });
 });
 
 // eslint-disable-next-line no-console
