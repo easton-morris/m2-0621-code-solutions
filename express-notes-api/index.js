@@ -16,7 +16,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  if (parseInt(req.params.id) > 0) {
+  if (Number.isInteger(req.params.id)) {
     if (req.params.id in notes.notes) {
       res.status(200).json(notes.notes[req.params.id]);
     } else {
@@ -48,7 +48,7 @@ app.post('/api/notes', (req, res, next) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-  if (parseInt(req.params.id) > 0) {
+  if (Number.isInteger(req.params.id)) {
     if (req.params.id in notes.notes) {
       delete notes.notes[req.params.id];
       fs.writeFile('./data.json', JSON.stringify(notes, null, 2), err => {
@@ -67,7 +67,7 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.put('/api/notes/:id', (req, res) => {
-  if (parseInt(req.params.id) > 0 && req.body.content !== undefined) {
+  if (Number.isInteger(req.params.id) && req.body.content !== undefined) {
     if (req.params.id in notes.notes) {
       notes.notes[req.params.id] = {
         id: req.params.id,
