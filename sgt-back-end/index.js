@@ -73,9 +73,11 @@ app.post('/api/grades', (req, res, next) => {
     INSERT INTO "grades" ("name",
            "course",
            "scores")
-    VALUES (${req.body.name}, ${req.body.course}, ${req.body.score})
+    VALUES ($1, $2, $3)
+    RETURNING ROW
   `;
-  db.query(sql)
+  const values = [req.body.name, req.body.course, req.body.score];
+  db.query(sql, values)
     .then(result => {
       const grades = result.rows;
       if (!grades) {
