@@ -12,13 +12,13 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
     return;
   }
   const sql = `
-    select "gradeId",
+    SELECT "gradeId",
            "name",
            "course",
            "score",
            "createdAt"
-      from "grades"
-     where "gradeId" = $1
+      FROM "grades"
+     WHERE "gradeId" = $1
   `;
   const params = [gradeId];
   db.query(sql, params)
@@ -42,13 +42,38 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
 
 app.get('/api/grades', (req, res, next) => {
   const sql = `
-    select "gradeId",
+    SELECT "gradeId",
            "name",
            "course",
            "score",
            "createdAt"
-      from "grades"
-     where "gradeId" = $1
+      FROM "grades"
+  `;
+  db.query(sql)
+    .then(result => {
+      const grades = result.rows;
+      if (!grades) {
+        res.status(404).json({
+          error: 'Cannot find any grades'
+        });
+      } else {
+        res.status(200).json(grades);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occurred.'
+      });
+    });
+});
+
+app.post('/api/grades', (req, res, next) => {
+  const sql = `
+    INSERT INTO "grades" ("name",
+           "course",
+           "scores")
+    VALUES (${req.body.name}, ${req.body.course}, ${req.body.score})
   `;
   db.query(sql)
     .then(result => {
