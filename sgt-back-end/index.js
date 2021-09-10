@@ -119,7 +119,9 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
   }
   const sql = `
     UPDATE "grades"
-    SET "name" = $2, "course" = $3, "grade" = $4,
+    SET "name" = $2,
+        "course" = $3,
+        "score" = $4
     WHERE "gradeId" = $1
     RETURNING ROW
   `;
@@ -138,7 +140,7 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
         });
       } else if (typeof req.body.name !== 'string') {
         res.status(400).json({
-          error: 'Grade must be a string'
+          error: 'Name must be a string'
         });
       } else if (!req.body.course) {
         res.status(400).json({

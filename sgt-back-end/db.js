@@ -8,4 +8,4 @@ const db = new pg.Pool({
   }
 });
 
-exports.db = db;
+module.exports = db;
