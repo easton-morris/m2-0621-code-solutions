@@ -69,6 +69,22 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
+  if (!req.body.name) {
+    res.status(400).json({
+      error: 'Grade must have a name'
+    });
+    return;
+  } else if (!req.body.course) {
+    res.status(400).json({
+      error: 'Grade must have a course'
+    });
+    return;
+  } else if (!req.body.score) {
+    res.status(400).json({
+      error: 'Grade must have a score'
+    });
+    return;
+  }
   const sql = `
     INSERT INTO "grades" ("name",
            "course",
@@ -81,19 +97,7 @@ app.post('/api/grades', (req, res, next) => {
   db.query(sql, values)
     .then(result => {
       const grade = result.rows[0];
-      if (!req.body.name) {
-        res.status(400).json({
-          error: 'Grade must have a name'
-        });
-      } else if (!req.body.course) {
-        res.status(400).json({
-          error: 'Grade must have a course'
-        });
-      } else if (!req.body.score) {
-        res.status(400).json({
-          error: 'Grade must have a score'
-        });
-      } else if (subScore < 0 || subScore > 100) {
+      if (subScore < 0 || subScore > 100) {
         res.status(400).json({
           error: 'Grade must have be between 0 and 100'
         });
@@ -117,6 +121,27 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     });
     return;
   }
+  if (!req.body.name) {
+    res.status(400).json({
+      error: 'Grade must have a name'
+    });
+    return;
+  } else if (typeof req.body.name !== 'string') {
+    res.status(400).json({
+      error: 'Name must be a string'
+    });
+    return;
+  } else if (!req.body.course) {
+    res.status(400).json({
+      error: 'Grade must have a course'
+    });
+    return;
+  } else if (!req.body.score) {
+    res.status(400).json({
+      error: 'Grade must have a score'
+    });
+    return;
+  }
   const sql = `
     UPDATE "grades"
     SET "name" = $2,
@@ -133,22 +158,6 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${gradeId}`
-        });
-      } else if (!req.body.name) {
-        res.status(400).json({
-          error: 'Grade must have a name'
-        });
-      } else if (typeof req.body.name !== 'string') {
-        res.status(400).json({
-          error: 'Name must be a string'
-        });
-      } else if (!req.body.course) {
-        res.status(400).json({
-          error: 'Grade must have a course'
-        });
-      } else if (!req.body.score) {
-        res.status(400).json({
-          error: 'Grade must have a score'
         });
       } else if (subScore < 0 || subScore > 100) {
         res.status(400).json({
