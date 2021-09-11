@@ -69,6 +69,7 @@ app.get('/api/grades', (req, res, next) => {
 });
 
 app.post('/api/grades', (req, res, next) => {
+  const subScore = parseInt(req.body.score, 10);
   if (!req.body.name) {
     res.status(400).json({
       error: 'Grade must have a name'
@@ -84,24 +85,24 @@ app.post('/api/grades', (req, res, next) => {
       error: 'Grade must have a score'
     });
     return;
+  } else if (subScore < 0 || subScore > 100) {
+    res.status(400).json({
+      error: 'Grade must have be between 0 and 100'
+    });
+    return;
   }
   const sql = `
     INSERT INTO "grades" ("name",
            "course",
-           "scores")
+           "score")
     VALUES ($1, $2, $3)
-    RETURNING ROW
+    RETURNING *
   `;
   const values = [req.body.name, req.body.course, req.body.score];
-  const subScore = parseInt(req.body.score, 10);
   db.query(sql, values)
     .then(result => {
       const grade = result.rows[0];
-      if (subScore < 0 || subScore > 100) {
-        res.status(400).json({
-          error: 'Grade must have be between 0 and 100'
-        });
-      } else {
+      if (grade) {
         res.status(201).json(grade);
       }
     })
@@ -115,6 +116,7 @@ app.post('/api/grades', (req, res, next) => {
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = parseInt(req.params.gradeId, 10);
+  const subScore = parseInt(req.body.score, 10);
   if (!Number.isInteger(gradeId) || gradeId <= 0) {
     res.status(400).json({
       error: '"gradeId" must be a positive integer'
@@ -141,6 +143,11 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
       error: 'Grade must have a score'
     });
     return;
+  } else if (subScore < 0 || subScore > 100) {
+    res.status(400).json({
+      error: 'Grade must have be between 0 and 100'
+    });
+    return;
   }
   const sql = `
     UPDATE "grades"
@@ -148,20 +155,15 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
         "course" = $3,
         "score" = $4
     WHERE "gradeId" = $1
-    RETURNING ROW
+    RETURNING *
   `;
   const values = [gradeId, req.body.name, req.body.course, req.body.score];
-  const subScore = parseInt(req.body.score, 10);
   db.query(sql, values)
     .then(result => {
       const grade = result.rows[0];
       if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${gradeId}`
-        });
-      } else if (subScore < 0 || subScore > 100) {
-        res.status(400).json({
-          error: 'Grade must have be between 0 and 100'
         });
       } else {
         res.status(200).json(grade);
